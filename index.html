@@ -1,0 +1,39 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+        <form id="task-form">
+            <input type="text" id="task-name" required >
+            <button type="submit">Adicionar tarefa</button>
+        </form>
+        <ul id="task-list"></ul>
+        </div>
+    </body>
+    <script>
+            $('#task-form').submit(function(event) {
+            event.preventDefault(); // Previne o envio do formulário
+            var taskName = $('#task-name').val(); // Obtém o valor do campo de entrada
+            $('#task-list').append('<li>' + taskName + '</li>'); // Adiciona um novo item à lista
+            });
+
+                        // Adiciona um evento de clique aos itens da lista
+            $('#task-list').on('click', 'li', function() {
+                // Aplica o estilo de riscado apenas ao texto do elemento
+                $(this).css('text-decoration', 'line-through');
+            });
+
+    </script>
+    <footer>
+        <p>2023&COPY;Maikon-santos LTDA</p> 
+    </footer>
+
+    </html>
